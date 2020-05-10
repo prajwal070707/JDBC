@@ -4,8 +4,30 @@ import java.util.Scanner;
 
 public class AddEmployee {
 
-	public static void main(String[] args) throws NumberFormatException, Exception {
+	public static void main(String[] args)  {
 
+		Scanner scanner = new Scanner(System.in);
+		int input = 1;
+		while(true){
+			System.out.println("Please choose an option by typing a number");
+			System.out.println("Enter 1 to add new employee.");
+			System.out.println("Enter 2 if you are done.");
+			input = scanner.nextInt();
+			try{
+				if(input == 1){
+					showAddMenu();
+				}else
+					break;
+			}
+			catch(Exception e){
+				System.out.println(e.getCause());
+				System.out.println(e.getStackTrace());
+			}
+		}
+		scanner.close();
+	}
+
+	public static void showAddMenu() throws NumberFormatException, Exception{
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter Firstname: ");
 
@@ -22,9 +44,9 @@ public class AddEmployee {
 		String age = scanner.nextLine();
 
 		System.out.println("Your age is: " + age);
-		scanner.close();
-		EmployeeDAO employeeDAO = new EmployeeDAO();
-		employeeDAO.addEmployee(firstName, lastName, Integer.parseInt(age));
 
+		EmployeeDAO employeeDAO;
+		employeeDAO = new EmployeeDAO();
+		employeeDAO.addEmployee(firstName, lastName, Integer.parseInt(age));
 	}
 }
