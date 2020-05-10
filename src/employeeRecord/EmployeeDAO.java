@@ -12,7 +12,7 @@ public class EmployeeDAO {
 
 	public void addEmployee(String firstName, String lastName,Integer age) throws Exception {
 //firstname = "prajwal', 'lastname', '20'
-		String url = "jdbc:mysql://localhost:3306/employeedb";
+		String url = "jdbc:mysql://localhost:3306/new_schema";
 		String username = "root";
 		String password = "matrix";
 		//"INSERT INTO employee (first_name, last_name, age) values (PRAJAL', 'SHRESTHA', 2)";
