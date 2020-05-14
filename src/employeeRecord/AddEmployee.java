@@ -1,5 +1,7 @@
 package employeeRecord;
 
+import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AddEmployee {
@@ -11,12 +13,17 @@ public class AddEmployee {
 		while(true){
 			System.out.println("Please choose an option by typing a number");
 			System.out.println("Enter 1 to add new employee.");
-			System.out.println("Enter 2 if you are done.");
+			System.out.println("Enter 2 to display all employee.");
+			System.out.println("Enter 3 if you are done.");
+
 			input = scanner.nextInt();
 			try{
 				if(input == 1){
 					showAddMenu();
-				}else
+				}
+				else if(input == 2){
+					displayAll();}
+				else
 					break;
 			}
 			catch(Exception e){
@@ -49,4 +56,17 @@ public class AddEmployee {
 		employeeDAO = new EmployeeDAO();
 		employeeDAO.addEmployee(firstName, lastName, Integer.parseInt(age));
 	}
+	public static void displayAll() throws ClassNotFoundException, SQLException {
+		EmployeeDAO employeeDAO;
+		employeeDAO = new EmployeeDAO();
+		//employeeDAO.getAllEmployees();
+	System.out.println(Arrays.toString(employeeDAO.getAllEmployees().toArray()));
+		//Employee emp= new Employee();
+		
+		
+	
+	
+	
+	}
 }
+

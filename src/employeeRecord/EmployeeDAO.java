@@ -1,6 +1,7 @@
 package employeeRecord;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class EmployeeDAO {
 	
@@ -28,6 +29,31 @@ public class EmployeeDAO {
 		con.close();
 
 	}
+
+	public ArrayList<Employee> getAllEmployees() throws ClassNotFoundException, SQLException {
+		String url = "jdbc:mysql://localhost:3306/new_schema";
+		String username = "root";
+		String password = "matrix";
+		String query="SELECT * FROM new_schema.employee";
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection(url, username, password);
+		Statement st = con.createStatement();
+		
+		ResultSet rs = 		st.executeQuery(query);
+		ArrayList<Employee> employeeList=new ArrayList<>();
+		while (rs.next()) {		
+			Employee emp = new Employee();
+
+			emp.setEmployeeId(rs.getInt("employee_ID"));
+			emp.setFirstName(rs.getString("first_name"));
+			emp.setLastName(rs.getString("last_name"));
+		emp.setAge(rs.getInt("age"));
+			employeeList.add(emp);
+			
+		}
+		return employeeList;
+	}
+
 }
 
 
