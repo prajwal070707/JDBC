@@ -7,7 +7,6 @@ public class Employee {
 	private String lastName;
 	private Integer age;
 	
-	
 	public Employee(Integer employeeId, String firstName, String lastName, Integer age) {
 		super();
 		this.employeeId = employeeId;
@@ -15,10 +14,12 @@ public class Employee {
 		this.lastName = lastName;
 		this.age = age;
 	}
-	public Employee() {
+
+    public Employee() {
 		// TODO Auto-generated constructor stub
 	}
-	public Integer getEmployeeId() {
+
+    public Integer getEmployeeId() {
 		return employeeId;
 	}
 	public void setEmployeeId(Integer employeeId) {
@@ -42,7 +43,8 @@ public class Employee {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-	@Override
+
+    @Override
 	public String toString() {
 		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", age="
 				+ age + "]";

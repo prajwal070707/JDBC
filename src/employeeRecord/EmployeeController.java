@@ -4,10 +4,9 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class AddEmployee {
+public class EmployeeController {
 
 	public static void main(String[] args)  {
-
 		Scanner scanner = new Scanner(System.in);
 		int input = 1;
 		while(true){
@@ -34,7 +33,7 @@ public class AddEmployee {
 		scanner.close();
 	}
 
-	public static void showAddMenu() throws NumberFormatException, Exception{
+    public static void showAddMenu() throws Exception {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter Firstname: ");
 
@@ -56,17 +55,13 @@ public class AddEmployee {
 		employeeDAO = new EmployeeDAO();
 		employeeDAO.addEmployee(firstName, lastName, Integer.parseInt(age));
 	}
+
 	public static void displayAll() throws ClassNotFoundException, SQLException {
 		EmployeeDAO employeeDAO;
 		employeeDAO = new EmployeeDAO();
 		//employeeDAO.getAllEmployees();
-	System.out.println(Arrays.toString(employeeDAO.getAllEmployees().toArray()));
+        System.out.println(Arrays.toString(employeeDAO.getAllEmployees().toArray()));
 		//Employee emp= new Employee();
-		
-		
-	
-	
-	
 	}
 }
 

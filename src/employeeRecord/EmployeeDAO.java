@@ -47,7 +47,7 @@ public class EmployeeDAO {
 			emp.setEmployeeId(rs.getInt("employee_ID"));
 			emp.setFirstName(rs.getString("first_name"));
 			emp.setLastName(rs.getString("last_name"));
-		emp.setAge(rs.getInt("age"));
+            emp.setAge(rs.getInt("age"));
 			employeeList.add(emp);
 			
 		}
