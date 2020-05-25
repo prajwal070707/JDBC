@@ -52,13 +52,13 @@ public class AddEmployee {
 
 		System.out.println("Your age is: " + age);
 
-		EmployeeDAO employeeDAO;
-		employeeDAO = new EmployeeDAO();
+		EmployeeDAOImpl employeeDAO;
+		employeeDAO = new EmployeeDAOImpl();
 		employeeDAO.addEmployee(firstName, lastName, Integer.parseInt(age));
 	}
 	public static void displayAll() throws ClassNotFoundException, SQLException {
-		EmployeeDAO employeeDAO;
-		employeeDAO = new EmployeeDAO();
+		EmployeeDAOImpl employeeDAO;
+		employeeDAO = new EmployeeDAOImpl();
 		//employeeDAO.getAllEmployees();
 	System.out.println(Arrays.toString(employeeDAO.getAllEmployees().toArray()));
 		//Employee emp= new Employee();
